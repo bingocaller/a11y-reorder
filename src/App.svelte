@@ -1,11 +1,21 @@
 <script>
-	export let name;
+	import Button from './Button.svelte';
+	export const items = [
+		{
+			label: 'First item',
+			position: 0,
+		},
+		{
+			label: 'Second item',
+			position: 1,
+		},
+		{
+			label: 'Third item',
+			position: 2,
+		},
+	];
 </script>
 
-<style>
-	h1 {
-		color: purple;
-	}
-</style>
-
-<h1>Hello {name}!</h1>
+{#each items as {label, position}}
+	<Button>{label}</Button>
+{/each}
